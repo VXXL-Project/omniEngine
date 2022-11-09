@@ -28,8 +28,9 @@ class RPCHost():
                         else:
                             RPCSSL=False
         except IOError as e:
+            print("Failed to load bitcoin", e)
             response='{"error": "Unable to load bitcoin config file. Please Notify Site Administrator"}'
-            return response
+            raise Exception(response)
         if RPCSSL:
             self._url = "https://"+RPCUSER+":"+RPCPASS+"@"+RPCHOST+":"+RPCPORT
         else:
