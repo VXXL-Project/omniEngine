@@ -53,9 +53,9 @@ else:
 
   #block with first MP transaction
   if config.TESTNET:
-    firstMPtxBlock=263137
+    firstMPtxBlock=1
   else:
-    firstMPtxBlock=252317
+    firstMPtxBlock=295505
 
   #get last known block processed from db
   currentBlock=dbSelect("select max(blocknumber) from blocks", None)[0][0]
